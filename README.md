@@ -90,7 +90,7 @@ Realizar las siguientes instalaciones necesarias.
    ```
 5. Esto creará, dentro de la carpeta `src`, una nueva carpeta llamada `data` y, dentro de esta, se establecerán dos subcarpetas:  
 
-- **`csv_raw`**: Aquí se almacenará un archivo `.csv` por cada hoja del archivo de Excel **"Films_2.xlsx"**, conteniendo los datos extraídos sin procesar.  
+- **`csv_raw`**: Aquí se almacenará un archivo `.csv` por cada hoja del archivo de Excel **"Films_2 .xlsx"**, conteniendo los datos extraídos sin procesar.  
 - **`processed_data`**: En esta carpeta se guardarán los archivos procesados en formato `.parquet`, ya depurados (sin duplicados, sin errores tipográficos y sin valores NaN), correspondientes a cada hoja del archivo de Excel.  
 
 Estos archivos procesados se utilizarán para el análisis exploratorio de datos, cuyos resultados se encuentran en la carpeta **`Data_Analysis`**.
