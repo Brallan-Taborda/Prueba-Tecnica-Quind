@@ -31,7 +31,7 @@ El siguiente proyecto implementa una aplicación escalable y modular para gestio
 <div align="center">
     <code><img width="50" src="https://user-images.githubusercontent.com/25181517/192108374-8da61ba1-99ec-41d7-80b8-fb2f7c0a4948.png" alt="GitHub" title="GitHub"/></code>
     <code><img width="50" src="https://w7.pngwing.com/pngs/585/822/png-transparent-python-scalable-graphics-logo-javascript-creative-dimensional-code-angle-text-rectangle-thumbnail.png" alt="Python" title="Python"/></code>
-    <code><img width="50" src="https://simpleicons.org/icons/apachespark.svg" alt="Apache Spark" title="Apache Spark"/></code>
+    <code><img width="50" src="https://w7.pngwing.com/pngs/1/687/png-transparent-apache-spark-apache-http-server-scala-apache-software-foundation-data-processing-others-miscellaneous-text-orange.png" alt="Apache Spark" title="Apache Spark"/></code>
 </div>
 
 ---
