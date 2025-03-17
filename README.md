@@ -72,20 +72,79 @@ Realizar las siguientes instalaciones necesarias.
 
 1. Clonar el repositorio
    ```sh
-   git clone https://github.com/Brallan-Taborda/Prueba-Tecnica-Quind/tree/main
+   git clone https://github.com/Brallan-Taborda/Prueba-Tecnica-Quind.git
    ```
-2. Abrir la terminal del sistema operativo en modo administrador e ingresar a la dirrección de la carpeta del repositorio
+   
+2. Abrir la terminal del sistema operativo e ingresar a la dirrección de la carpeta del proyecto para instalar los requerimientos:
    ```sh
-    a
+    pip install -r requirements.txt
    ```
-3. Instalar las librerías necesarias con el siguiente comando
+2. Ingresar a la carpeta src, en mi caso es:
    ```sh
-   pip install -r requirements.txt
+   C:\Users\Brallan\Desktop\Prueba_Tecnica_Brallan\src
    ```
-4. Ejecutar el siguiente comando
+
+4. Ejecutar el siguiente comando para inicializar el programa
    ```sh
    python main.py
    ```
+5. Esto creará en la carpeta "data" los datos extraídos de cada una de las hojas del archivo de Excel "Films_2 .xlsx" sin procesar en formato `.csv`. Por otro lado, en la carpeta "processed_data" se crearán, en formato `.parquet`, los archivos ya tratados (sin duplicados, sin errores de tipografía y sin valores NaN) de cada una de las hojas del archivo de Excel, los cuales se usaron para obtener el análisis exploratorio de los datos que se encuentra en la carpeta "Data_Analysis".
+
+
+## Justificación del Diseño
+
+### Estructura del Proyecto
+
+```plaintext
+proyecto_etl/
+├── Data_Analysis/            # Análisis de datos (tablas, visualizaciones, etc.)
+├── Informe/                  # Documentación relacionada con el informe
+├── src/                      # Código fuente de la aplicación
+│   ├── data/                 # Datos generados o utilizados por la aplicación
+│   ├── logs/                 # Registros de la aplicación
+│   ├── methods/              # Métodos principales para la manipulación de datos
+│   │   ├── extract.py        # Lógica de extracción de datos
+│   │   ├── load.py           # Lógica de carga de datos
+│   │   └── transform.py      # Lógica de transformación de datos
+│   ├── utils/                # Utilidades adicionales
+│   │   ├── logger.py         # Módulo de observabilidad (logging)
+│   │   ├── metric.py         # Métricas de la aplicación
+│   │   └── config.py         # Configuraciones de la aplicación
+│   └── main.py               # Punto de entrada de la aplicación
+├── Films_2 .xlsx              # Archivo de datos utilizado en el proyecto
+├── README.md                 # Documentación general del proyecto
+└── requirements.txt          # Dependencias del proyecto
+```
+
+
+
+### Decisiones de Diseño
+
+1. **Modularidad**:
+   - El proyecto está dividido en módulos (`extract`, `transform`, `load`) para facilitar la escalabilidad y el mantenimiento. Cada módulo tiene una responsabilidad clara, lo que sigue el principio de **Single Responsibility** (SOLID).
+
+2. **Observabilidad**:
+   - Se implementó un módulo de logging (`logger.py`) para monitorear el comportamiento de la aplicación en tiempo real. Esto permite detectar y solucionar errores de manera más eficiente.
+
+3. **Escalabilidad**:
+   - El uso de **Apache Spark** permite procesar grandes volúmenes de datos de manera distribuida, lo que hace que la aplicación sea escalable y eficiente.
+
+4. **Principios SOLID**:
+   - Se aplicaron los principios de diseño SOLID para garantizar un código limpio, mantenible y extensible. Por ejemplo:
+     - **Single Responsibility**: Cada módulo tiene una única responsabilidad.
+     - **Open/Closed Principle**: El diseño permite extender la funcionalidad sin modificar el código existente.
+     - **Dependency Inversion**: Los módulos dependen de abstracciones, no de implementaciones concretas.
+
+5. **Uso de Python y Spark**:
+   - **Python** fue elegido por su simplicidad y amplia adopción en el ámbito de la ciencia de datos.
+   - **Apache Spark** fue seleccionado por su capacidad para procesar grandes volúmenes de datos de manera distribuida y su integración con Python a través de PySpark.
+
+
+## Posibles mejoras
+
+ - Se pueden añadir más clases en extract.py para trabajar con diferentes archivos (.csv, .JSON, etc).
+ - Se puede hacer un seleccionador que pregunte antes de empezar en que formato se requieren los datos procesados.
+
 
 ## Desarrolladores
 
