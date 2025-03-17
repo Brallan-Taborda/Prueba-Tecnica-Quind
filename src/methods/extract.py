@@ -8,7 +8,7 @@ from utils.logger import logger
 class ExcelExtractor:
     def __init__(self, output_format="csv"):
         self.output_format = output_format
-        self.output_dir = "data/csv"
+        self.output_dir = "data/csv_raw"
         os.makedirs(self.output_dir, exist_ok=True)
 
     @REQUEST_TIME.time()
